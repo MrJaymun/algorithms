@@ -25,7 +25,7 @@ namespace AlgorithmFirstWork
                 unsorted[index] = buf;
             }
             int[] sorted = unsorted;
-            Program.after = DateTime.UtcNow;
+           
             return sorted;
         }
     }

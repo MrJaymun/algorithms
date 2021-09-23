@@ -10,7 +10,7 @@ namespace AlgorithmFirstWork
         static void Main(string[] args)
         {
             IFileWorker worker = new FileWorker();
-           
+
             ISorter sorter = new BubbleSorter();
 
             Validator validator = new Validator();
@@ -19,6 +19,9 @@ namespace AlgorithmFirstWork
 
             string getFileName;
             string saveFileName;
+
+
+            
             while (true)
             {
                 Console.WriteLine("Введите название файла, откуда необходимо взять массив");
@@ -30,6 +33,7 @@ namespace AlgorithmFirstWork
                     Console.WriteLine("2 - Сортировка вставками");
                     Console.WriteLine("3 - Сортировка выбором");
                     Console.WriteLine("4 - Сортировка слиянием");
+                    Console.WriteLine("5 - Быстрая сортировка");
                     string choose = Console.ReadLine(); 
                     bool flag = true;
                         switch (choose)
@@ -54,7 +58,12 @@ namespace AlgorithmFirstWork
                                     sorter = new MergeSorter();
                                     break;
                                 }
-                            default:
+                            case "5":
+                                {
+                                sorter = new QuickSorter();
+                                break;
+                                }
+                        default:
                                 {
                                     Console.WriteLine("Неверная команда!");  
                                     flag = false;
@@ -76,7 +85,8 @@ namespace AlgorithmFirstWork
                             saveFileName = validator.CheckFileName(Console.ReadLine());
                             before = DateTime.UtcNow;
                             data = sorter.Sort(unsorted);
-                            
+                            Program.after = DateTime.UtcNow;
+
                             worker.SaveData(data, saveFileName);
                             Console.Clear();
                             Console.WriteLine("Выполнено!");
@@ -91,6 +101,7 @@ namespace AlgorithmFirstWork
                     Console.Clear();
                     Console.WriteLine("Файл не найден!");
                 }
+            
                 
             }
         }

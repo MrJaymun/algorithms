@@ -9,7 +9,6 @@ namespace AlgorithmFirstWork
         
         public int[] Sort(int[] array)
         {
-            Program.after = DateTime.UtcNow;
             return this.MergeSort(array, 0, array.Length - 1);
         }
 

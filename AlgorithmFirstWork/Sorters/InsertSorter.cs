@@ -24,8 +24,7 @@ namespace AlgorithmFirstWork
                 }
                 unsorted[j] = currentValue;
             }
-            int[] sorted = unsorted;
-            Program.after = DateTime.UtcNow;
+            int[] sorted = unsorted; 
             return sorted;
         }
     }
