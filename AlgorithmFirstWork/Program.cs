@@ -34,6 +34,8 @@ namespace AlgorithmFirstWork
                     Console.WriteLine("3 - Сортировка выбором");
                     Console.WriteLine("4 - Сортировка слиянием");
                     Console.WriteLine("5 - Быстрая сортировка");
+                    Console.WriteLine("6 - Пирамидальная сортировка");
+                    Console.WriteLine("7 - Сортировка бинарным деревом");
                     string choose = Console.ReadLine(); 
                     bool flag = true;
                         switch (choose)
@@ -63,6 +65,16 @@ namespace AlgorithmFirstWork
                                 sorter = new QuickSorter();
                                 break;
                                 }
+                            case "6":
+                            {
+                                sorter = new HeapSorter();
+                                break;
+                            }
+                        case "7":
+                            {
+                                sorter = new TreeSorter();
+                                break;
+                            }
                         default:
                                 {
                                     Console.WriteLine("Неверная команда!");  
